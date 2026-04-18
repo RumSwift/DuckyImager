@@ -7,10 +7,11 @@ import { LoadSprites } from './Loaders/LoadSprites.js';
 import { CreateAvatarRouter } from './Routes/AvatarImage.js';
 
 const CurrentDirectory = dirname(fileURLToPath(import.meta.url));
-const Port = process.env.PORT || 3000;
-const TestToonUrl = `http://localhost:${Port}/habbo-imaging/avatarimage?habbo=Rhyss&hotel=COM&direction=4&head_direction=2&crr=1&gesture=sml&action=wav`;
-const TestFigureStringUrl = `http://localhost:${Port}/habbo-imaging/avatarimage?figure=hr-802-1035.hd-185-1026.ch-215-1299.lg-275-1248.ha-2213-1.he-1609-1298&direction=4&head_direction=2&crr=1&gesture=sml&action=wav`;
-const CalibratorUrl = `http://localhost:${Port}/calibrator`;
+const Port = process.env.PORT
+const BaseUrl = process.env.URL
+const TestToonUrl = `${BaseUrl}/habbo-imaging/avatarimage?habbo=Rhyss&hotel=COM&direction=4&head_direction=2&crr=1&gesture=sml&action=wav`;
+const TestFigureStringUrl = `${BaseUrl}/habbo-imaging/avatarimage?figure=hr-802-1035.hd-185-1026.ch-215-1299.lg-275-1248.ha-2213-1.he-1609-1298&direction=4&head_direction=2&crr=1&gesture=sml&action=wav`;
+const CalibratorUrl = `${BaseUrl}/calibrator`;
 
 async function StartServer() {
     const StartTime = Date.now();
