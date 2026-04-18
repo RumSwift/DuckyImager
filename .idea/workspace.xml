@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="507145cb-f170-4fa6-add8-f2891f7a3b35" name="Changes" comment="" />
+    <list default="true" id="507145cb-f170-4fa6-add8-f2891f7a3b35" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Public/Css/UIElements.css" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Public/Css/UIElements.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +22,21 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "RumSwift"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/RumSwift/DuckyImager.git",
+    "accountId": "7f58c454-c4fd-45ce-9d99-f54ad0bb9a6d"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -29,6 +48,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "javascript.nodejs.core.library.configured.version": "22.14.0",
     "javascript.nodejs.core.library.typings.version": "22.14.1",
     "last_opened_file_path": "D:/Dev/originsimagernnew",
@@ -73,7 +93,7 @@
       <updated>1775303594049</updated>
       <workItem from="1775303595094" duration="22065000" />
       <workItem from="1775669675976" duration="4356000" />
-      <workItem from="1776533131686" duration="4464000" />
+      <workItem from="1776533131686" duration="5885000" />
     </task>
     <servers />
   </component>

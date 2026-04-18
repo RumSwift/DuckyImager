@@ -13,7 +13,6 @@
 }
 
 .hdrop-row { display: flex; }
-
 .hdrop-tl { width:6px; height:6px; background: url('../Img/UI/66.png') no-repeat; flex-shrink:0; }
 .hdrop-tm { height:6px; background: url('../Img/UI/67.png') repeat-x; flex:1; }
 .hdrop-tr { width:6px; height:6px; background: url('../Img/UI/66.png') no-repeat; transform: scaleX(-1); flex-shrink:0; }
