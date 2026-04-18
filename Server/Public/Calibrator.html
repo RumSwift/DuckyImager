@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calibrator</title>
+    <link rel="stylesheet" href="Css/Fonts.css">
+    <link rel="stylesheet" href="Css/Global.css">
+    <link rel="stylesheet" href="Css/ContentBoxes.css">
+    <link rel="stylesheet" href="Css/UIElements.css">
+    <link rel="stylesheet" href="Css/Calibrator.css">
+</head>
+<body>
+
+<img src="Img/Title.png">
+
+<div class="panels">
+
+    <!-- LEFT: Habbo panel -->
+    <div class="hwin">
+        <div class="hwin-row"><div class="hwin-tl"></div><div class="hwin-tm"></div><div class="hwin-tr"></div></div>
+        <div class="hwin-row">
+            <div class="hwin-ml"></div>
+            <div class="hwin-mm">
+                <div class="hbox">
+                    <div class="hbox-row"><div class="hbox-tl"></div><div class="hbox-tm"></div><div class="hbox-tr"></div></div>
+                    <div class="hbox-row">
+                        <div class="hbox-ml"></div>
+                        <div class="hbox-mm">
+                            <div class="cal-left-inner">
+
+                                <!-- Toolbar -->
+                                <div class="cal-toolbar">
+                                    <div class="hdrop" id="part-drop">
+                                        <div class="hdrop-closed">
+                                            <div class="hdrop-row"><div class="hdrop-tl"></div><div class="hdrop-tm"></div><div class="hdrop-tr"></div></div>
+                                            <div class="hdrop-row">
+                                                <div class="hdrop-ml"></div>
+                                                <div class="hdrop-mm">
+                                                    <span class="hdrop-text">Hat (ha)</span>
+                                                    <div class="hdrop-arrow"></div>
+                                                </div>
+                                                <div class="hdrop-mr"></div>
+                                            </div>
+                                            <div class="hdrop-row"><div class="hdrop-bl"></div><div class="hdrop-bm"></div><div class="hdrop-br"></div></div>
+                                        </div>
+                                        <div class="hdrop-list">
+                                            <div class="hdrop-option" data-part="ha">Hat (ha)</div>
+                                            <div class="hdrop-option" data-part="hr">Hair (hr)</div>
+                                            <div class="hdrop-option" data-part="hrb">Hair Back (hrb)</div>
+                                            <div class="hdrop-option" data-part="hd">Head (hd)</div>
+                                            <div class="hdrop-option" data-part="fc">Face (fc)</div>
+                                            <div class="hdrop-option" data-part="ey">Eyes (ey)</div>
+                                            <div class="hdrop-option" data-part="fa">Face Acc (fa)</div>
+                                            <div class="hdrop-option" data-part="ea">Ear Acc (ea)</div>
+                                            <div class="hdrop-option" data-part="he">Head Acc (he)</div>
+                                            <div class="hdrop-option" data-part="ch">Shirt (ch)</div>
+                                            <div class="hdrop-option" data-part="ca">Chest Acc (ca)</div>
+                                            <div class="hdrop-option" data-part="wa">Waist Acc (wa)</div>
+                                            <div class="hdrop-option" data-part="bd">Body (bd)</div>
+                                            <div class="hdrop-option" data-part="lg">Legs (lg)</div>
+                                            <div class="hdrop-option" data-part="sh">Shoes (sh)</div>
+                                            <div class="hdrop-option" data-part="ri">Hand Item (ri)</div>
+                                            <div class="hdrop-option" data-part="rh">Right Hand (rh)</div>
+                                            <div class="hdrop-option" data-part="rs">Right Sleeve (rs)</div>
+                                            <div class="hdrop-option" data-part="li">Left Item (li)</div>
+                                            <div class="hdrop-option" data-part="lh">Left Hand (lh)</div>
+                                            <div class="hdrop-option" data-part="ls">Left Sleeve (ls)</div>
+                                        </div>
+                                    </div>
+                                    <div class="hbtn-a" id="btn-add-asset" style="flex-shrink:0;">
+                                        <div class="hbtn-a-l"></div>
+                                        <div class="hbtn-a-m"><span class="hbtn-a-text">Add Asset</span></div>
+                                        <div class="hbtn-a-r"></div>
+                                    </div>
+                                    <input type="file" id="cal-file-inp" accept="image/png" style="display:none;">
+                                </div>
+
+                                <div class="cal-toon-row">
+                                    <div class="cal-arrows">
+                                        <div class="harrow harrow-left" onclick="ChangeHeadDir(-1)"></div>
+                                        <div class="harrow harrow-left" onclick="ChangeBodyDir(-1)"></div>
+                                    </div>
+                                    <div id="cal-canvas-wrap">
+                                        <canvas id="habbo-canvas" width="64" height="116"></canvas>
+                                    </div>
+                                    <div class="cal-arrows">
+                                        <div class="harrow harrow-right" onclick="ChangeHeadDir(1)"></div>
+                                        <div class="harrow harrow-right" onclick="ChangeBodyDir(1)"></div>
+                                    </div>
+                                </div>
+
+                                <div class="cal-controls-row">
+                                    <span class="cal-label">Zoom</span>
+                                    <select onchange="SetZoom(this.value)" style="font-family:'Volter',monospace;font-size:9px;">
+                                        <option value="1">1x</option>
+                                        <option value="2" selected>2x</option>
+                                        <option value="4">4x</option>
+                                    </select>
+                                    <span class="cal-label">Size</span>
+                                    <select onchange="SetSize(this.value)" style="font-family:'Volter',monospace;font-size:9px;">
+                                        <option value="b">Normal</option>
+                                        <option value="a">Small</option>
+                                    </select>
+                                    <input type="checkbox" id="cal-flip" onchange="ToggleFlip()">
+                                    <span class="cal-label">Flip</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="hbox-mr"></div>
+                    </div>
+                    <div class="hbox-row"><div class="hbox-bl"></div><div class="hbox-bm"></div><div class="hbox-br"></div></div>
+                </div>
+            </div>
+            <div class="hwin-mr"></div>
+        </div>
+        <div class="hwin-row"><div class="hwin-bl"></div><div class="hwin-bm"></div><div class="hwin-br"></div></div>
+    </div>
+
+    <!-- RIGHT: Sprite panel -->
+    <div class="hwin">
+        <div class="hwin-row"><div class="hwin-tl"></div><div class="hwin-tm"></div><div class="hwin-tr"></div></div>
+        <div class="hwin-row">
+            <div class="hwin-ml"></div>
+            <div class="hwin-mm">
+                <div class="hbox">
+                    <div class="hbox-row"><div class="hbox-tl"></div><div class="hbox-tm"></div><div class="hbox-tr"></div></div>
+                    <div class="hbox-row">
+                        <div class="hbox-ml"></div>
+                        <div class="hbox-mm">
+                            <div class="cal-right-inner">
+
+                                <input class="cal-sprite-name" id="cal-sprite-name" type="text" placeholder="h_std_ha_1_2_0" oninput="UpdateOutput()">
+
+                                <div class="cal-nudge-wrap">
+                                    <div class="cal-nudge-row">
+                                        <div class="cal-nudge-up" onclick="Nudge(0,-1)"></div>
+                                    </div>
+                                    <div class="cal-nudge-row">
+                                        <div class="cal-nudge-left" onclick="Nudge(-1,0)"></div>
+                                        <div style="width:29px;"></div>
+                                        <div class="cal-nudge-right" onclick="Nudge(1,0)"></div>
+                                    </div>
+                                    <div class="cal-nudge-row">
+                                        <div class="cal-nudge-down" onclick="Nudge(0,1)"></div>
+                                    </div>
+                                </div>
+
+                                <div class="cal-sep"></div>
+
+                                <span class="cal-label" style="text-align:center;width:100%;">Registration Point</span>
+                                <div class="cal-rp-value" id="cal-rp-val">( — , — )</div>
+
+                                <div class="cal-csv" id="cal-csv-out">—</div>
+
+                                <div class="cal-action-row">
+                                    <span class="cal-next-num" id="cal-next-num">#1</span>
+                                    <div class="hbtn-b" onclick="AddEntry()">
+                                        <div class="hbtn-b-l"></div>
+                                        <div class="hbtn-b-m"><span class="hbtn-b-text">Save Entry</span></div>
+                                        <div class="hbtn-b-r"></div>
+                                    </div>
+                                    <div class="hbtn-c" onclick="ClearAll()">
+                                        <div class="hbtn-c-l"></div>
+                                        <div class="hbtn-c-m"><span class="hbtn-c-text">Clear All</span></div>
+                                        <div class="hbtn-c-r"></div>
+                                    </div>
+                                </div>
+
+                                <div class="cal-entries" id="cal-entries"></div>
+
+                                <div class="hbtn-b" id="cal-copy-all" onclick="CopyAll()" style="width:100%;">
+                                    <div class="hbtn-b-l"></div>
+                                    <div class="hbtn-b-m"><span class="hbtn-b-text">Copy All</span></div>
+                                    <div class="hbtn-b-r"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="hbox-mr"></div>
+                    </div>
+                    <div class="hbox-row"><div class="hbox-bl"></div><div class="hbox-bm"></div><div class="hbox-br"></div></div>
+                </div>
+            </div>
+            <div class="hwin-mr"></div>
+        </div>
+        <div class="hwin-row"><div class="hwin-bl"></div><div class="hwin-bm"></div><div class="hwin-br"></div></div>
+    </div>
+
+</div>
+
+<!-- Preview strip -->
+<div class="hwin" id="cal-preview-win" style="display:none;">
+    <div class="hwin-row"><div class="hwin-tl"></div><div class="hwin-tm"></div><div class="hwin-tr"></div></div>
+    <div class="hwin-row">
+        <div class="hwin-ml"></div>
+        <div class="hwin-mm">
+            <div class="hbox">
+                <div class="hbox-row"><div class="hbox-tl"></div><div class="hbox-tm"></div><div class="hbox-tr"></div></div>
+                <div class="hbox-row">
+                    <div class="hbox-ml"></div>
+                    <div class="hbox-mm">
+                        <div class="cal-preview-strip" id="cal-preview-strip"></div>
+                    </div>
+                    <div class="hbox-mr"></div>
+                </div>
+                <div class="hbox-row"><div class="hbox-bl"></div><div class="hbox-bm"></div><div class="hbox-br"></div></div>
+            </div>
+        </div>
+        <div class="hwin-mr"></div>
+    </div>
+    <div class="hwin-row"><div class="hwin-bl"></div><div class="hwin-bm"></div><div class="hwin-br"></div></div>
+</div>
+
+<script src="Js/Dropdown.js"></script>
+<script src="Js/Calibrator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+Number,Type,Name,Registration Point,Filename
+1,bitmap,h_std_ha_100_0_0,"(-17, 81)",
+2,bitmap,h_std_ha_100_1_0,"(-18, 79)",
+3,bitmap,h_std_ha_100_2_0,"(-18, 78)",
+4,bitmap,h_std_ha_100_3_0,"(-18, 78)",
+5,bitmap,h_std_ha_100_7_0,"(-17, 79)",
+6,bitmap,sh_std_ha_100_0_0,"(-7, 40)",
+7,bitmap,sh_std_ha_100_1_0,"(-8, 40)",
+8,bitmap,sh_std_ha_100_2_0,"(-7, 39)",
+9,bitmap,sh_std_ha_100_3_0,"(-8, 38)",
+10,bitmap,sh_std_ha_100_7_0,"(-9, 39)",

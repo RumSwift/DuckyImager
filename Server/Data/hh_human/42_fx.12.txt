@@ -1,0 +1,1 @@
+# Ice FXhuman_sprite_props/[ink: 4, bgcolor: "#CCFFFF", forecolor: "#66CCFF"]

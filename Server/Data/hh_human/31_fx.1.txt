@@ -1,0 +1,1 @@
+#Spotlight FX# Define extra sprites.# id = unique identifier# ink = ink# member = member name# offZ = Z-offset relative to the main avatar (optional, default: 1. positive is above, negative is below..)sprite/[id: "fx1_1", ink: 33, member: "std_fx1_1_1", offZ: -1]sprite/[id: "fx1_2", ink: 33, member: "std_fx1_2_1", offZ: 1]

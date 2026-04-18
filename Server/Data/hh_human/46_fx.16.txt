@@ -1,0 +1,1 @@
+#Microphone FXhuman_sprite_props/[righthandup:1]add_bodypart/[id: "ri"]rh/[#act:["drk"], #frm:[0]]rs/[#act:["drk"], #frm:[0]]ri/[#frm: [0], #namebase: "fx16_1"]

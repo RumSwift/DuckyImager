@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<figuredata>
+    <sets>
+        <settype type="ha" paletteid="3" mand_m_0="0" mand_f_0="0" mand_m_1="0" mand_f_1="0">
+            <set id="3001" gender="U" club="0" colorable="1" selectable="1" preselectable="0">
+                <part id="100" type="ha" colorable="1" index="0" colorindex="1"/>
+                <hiddenlayers>
+                    <layer parttype="hrb"/>
+                </hiddenlayers>
+            </set>
+        </settype>
+    </sets>
+</figuredata>
