@@ -15,7 +15,7 @@ let Entries = [];
 
 const HandItemParts = ['ri', 'rh', 'rs', 'li', 'lh', 'ls'];
 
-// Directions 0-3 are real, 4-7 are mirrors
+// Mirrors
 function GetMirrorDir(Dir) {
     if (Dir >= 0 && Dir <= 3) return Dir + 4;
     if (Dir >= 4 && Dir <= 7) return Dir - 4;
@@ -164,7 +164,7 @@ function UpdateOutput() {
     document.getElementById('cal-next-num').textContent = '#' + NextNumber;
 }
 
-// Render a small preview canvas with habbo + sprite, flipping entire canvas for mirrored dirs
+// Render a preview with habbo + sprite, with mirrored
 function MakePreviewCanvas(AvatarUrl, SprImg, SpX, SpY, FlipEntireCanvas) {
     const W = CanvasW();
     const H = CanvasH();
@@ -178,7 +178,7 @@ function MakePreviewCanvas(AvatarUrl, SprImg, SpX, SpY, FlipEntireCanvas) {
 
     const Av = new Image();
     Av.onload = function() {
-        // Draw avatar + sprite onto a temp canvas first
+        // Temp canvas first
         const Tmp = document.createElement('canvas');
         Tmp.width = W;
         Tmp.height = H;
@@ -190,7 +190,7 @@ function MakePreviewCanvas(AvatarUrl, SprImg, SpX, SpY, FlipEntireCanvas) {
         }
 
         if (FlipEntireCanvas) {
-            // Flip entire canvas horizontally - same as the real renderer
+            // Flip entire canvas
             Cx.translate(W, 0);
             Cx.scale(-1, 1);
         }
@@ -204,7 +204,6 @@ function AddPreviewPair(BodyDir, HeadDir, SpImg, SpX, SpY, SpriteName) {
     const Strip = document.getElementById('cal-preview-strip');
     const IsOriginalFlipped = BodyDir >= 4;
 
-    // Base dirs (0-3) are the real sprites - use these for server fetch
     const BaseBodyDir = IsOriginalFlipped ? BodyDir - 4 : BodyDir;
     const BaseHeadDir = HeadDir >= 4 ? HeadDir - 4 : HeadDir;
     const MirrorBodyDir = GetMirrorDir(BodyDir);
@@ -216,7 +215,6 @@ function AddPreviewPair(BodyDir, HeadDir, SpImg, SpX, SpY, SpriteName) {
     const Frames = document.createElement('div');
     Frames.className = 'cal-preview-frames';
 
-    // Real frame - fetch base dir, flip canvas if original was 4-7
     const RealFrame = document.createElement('div');
     RealFrame.className = 'cal-preview-frame';
     const RealCanvas = MakePreviewCanvas(
@@ -236,7 +234,6 @@ function AddPreviewPair(BodyDir, HeadDir, SpImg, SpX, SpY, SpriteName) {
     RealFrame.appendChild(RealLabel);
     Frames.appendChild(RealFrame);
 
-    // Mirror frame - fetch base dir, flip canvas the opposite way
     if (MirrorBodyDir !== null) {
         const MirrorFrame = document.createElement('div');
         MirrorFrame.className = 'cal-preview-frame';
@@ -270,8 +267,6 @@ function AddEntry() {
     if (!Line) return;
 
     const SpriteName = document.getElementById('cal-sprite-name').value || ('h_std_' + CurrentPart + '_1_' + BodyDirection + '_0');
-
-    // Snapshot sprite state before clearing
     const SnapImg = SpriteImg;
     const SnapX = SpriteX;
     const SnapY = SpriteY;
@@ -282,14 +277,8 @@ function AddEntry() {
     NextNumber++;
     RenderEntries();
     UpdateOutput();
-
-    // Show preview window on first save
     document.getElementById('cal-preview-win').style.display = '';
-
-    // Add preview pair
     AddPreviewPair(SnapBodyDir, SnapHeadDir, SnapImg, SnapX, SnapY, SpriteName);
-
-    // Reset for next asset
     SpriteImg = null;
     document.getElementById('cal-file-inp').value = '';
     document.getElementById('cal-sprite-name').value = '';
