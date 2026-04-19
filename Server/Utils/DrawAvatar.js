@@ -8,6 +8,7 @@ import { ShouldFlip } from './DirectionHelpers.js';
 const CurrentDirectory = dirname(fileURLToPath(import.meta.url));
 const DataDirectory = join(CurrentDirectory, '..', 'Data');
 
+// Lookuptable but may add further corrections
 const HeadOffsets = [
     { BodyDirection: 4, HeadDirection: 3, X: -3, Y: -1 }
 ];

@@ -123,7 +123,7 @@ export function CreateAvatarRouter(XmlData, Sprites) {
 
             PngStream.on('error', (Error) => {
                 if (Error.code !== 'ECONNRESET' && Error.code !== 'EPIPE') {
-                    console.error('[Avatar] Rrror:', Error);
+                    console.error('[Avatar] Error:', Error);
                 }
             });
 
